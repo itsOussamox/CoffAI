@@ -24,6 +24,7 @@ export default function HomeConv(){
         const promptParsed = inputPrompt.trim();
         if(promptParsed === '') return;
         dispatch(addConversation({message: inputPrompt, isCoffAI: false}));
+        dispatch(addConversation({message: "Hello, I'am CoffAI.", isCoffAI: true}))
         dispatch(startConversation());
     }
     return (

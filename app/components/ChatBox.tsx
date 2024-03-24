@@ -21,14 +21,7 @@ export default function ChatBox() {
     const dispatch = useDispatch();
     const {conversation, lastPrompt} = useSelector((state: RootState) => state.prompt);
 
-    useEffect(() => {
-        // handle the last prompt and start the conversation when the component mounts
-        dispatch(addConversation({message: "Hello, I'am CoffAI.", isCoffAI: true}))
-    }, [])
-
     const getWords = (sentence: string) => {
-        
-
         const words = sentence.split(' ');
         return words.map((word) => {
             return {
