@@ -9,10 +9,10 @@ export const LampContainer = ({
   className?: string;
 }) => {
   return (
-    <div className="h-full w-full  absolute z-[-40] bottom-[20%]">
+    <div className="h-full w-full absolute z-[-40] top-[-23rem]">
     <div
       className={cn(
-        "relative flex flex-col min-h-screen items-center justify-center overflow-hidden bg-primary-bg  dark:bg-dprimary-bg w-full rounded-md z-0",
+        "relative flex flex-col min-h-[1080px] items-center justify-center overflow-hidden bg-primary-bg  dark:bg-dprimary-bg w-full rounded-md z-0",
         className
       )}
     >

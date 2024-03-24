@@ -16,17 +16,18 @@ export const promptSlice = createSlice({
         setLastResponse: (state, action) => {
             state.lastResponse = action.payload;
         },
-        setLastPrompt: (state, action) => {
-            state.lastPrompt = action.payload;
-        },
         addConversation: (state, action) => {
+            state.lastPrompt = action.payload.message;
             state.conversation.push(action.payload);
         },
         setAIModel: (state, action) => {
             state.aiModel = action.payload;
         },
+        startConversation: (state) => {
+            state.isStarted = true;
+        }
     },
 });
 
 
-export const { setLastResponse, setLastPrompt, addConversation, setAIModel } = promptSlice.actions;
+export const { setLastResponse, addConversation, setAIModel, startConversation } = promptSlice.actions;

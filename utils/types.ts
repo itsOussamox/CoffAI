@@ -2,8 +2,14 @@
 export interface PromptState {
     lastResponse: string;
     lastPrompt: string;
-    conversation: string[];
+    conversation: Conversation[];
     aiModel?: string;
-    isStarted?: boolean;
+    isStarted: boolean;
+}
+
+interface Conversation {
+    queue?: boolean;
+    isCoffAI: boolean;
+    message: string;
 }
 // add interface for the conversation component

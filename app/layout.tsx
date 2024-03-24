@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full w-full dark min-w-[300px] min-h-[1000px]">
-      <body className={`${poppins.className} flex flex-col h-full w-full overflow-hidden
+      <body  suppressHydrationWarning className={`${poppins.className} flex flex-col h-full w-full overflow-hidden
        bg-primary-bg dark:bg-dprimary-bg`}>
         <Darkmode />
         {children}

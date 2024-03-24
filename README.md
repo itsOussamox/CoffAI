@@ -5,11 +5,11 @@ CoffAI is a chatbot brewed with the finest OpenAI beans, ready to engage in conv
 
 ## Features
 
-- Conversational AI: Powered by OpenAI, CoffAI is trained to hold conversations on a wide range of topics, ensuring a stimulating and informative interaction.
+- Conversational AI: Powered by OpenAI (and other models), CoffAI is trained to hold conversations on a wide range of topics, ensuring a stimulating and informative interaction.
 - Talk about Everything: Whether you're looking for a casual chat, a debate on philosophy, or just some witty banter, CoffAI is your cup of conversation.
 - Everywhere, Everytime: Accessible through a user-friendly interface, CoffAI is always ready for a chat, no matter where you are or what time it is.
 
-## Try It Now
+## Try It Now (NOT NOW ACTUALLY)
 
 ```bash
 npm install
