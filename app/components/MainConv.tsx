@@ -34,9 +34,10 @@ export default function  MainConv() {
     e.preventDefault();
     const promptParsed = e.target.value.trim();
     if(promptParsed === '') return;
+    const firstPrompt : Conversation = {role: "user", content: e.target.value};
     dispatch(addConversation({ role: 'user', content: e.target.value}));
     e.target.value = '';
-    PromptSender(conversation)
+    PromptSender([conversation[0], firstPrompt])
       .then((response) => {getResponse(response, dispatch, conversation);})
   }
   return (

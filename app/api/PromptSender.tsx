@@ -11,8 +11,8 @@ export const PromptSender = async (conversation: Conversation[]) => {
             "Authorization": `Bearer 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`,
         },
         body: JSON.stringify({
-            // "model": "undi95/toppy-m-7b:free",
-            "model": "mistralai/mistral-7b-instruct:free",
+            "model": "openchat/openchat-7b:free",
+            // "model": "mistralai/mistral-7b-instruct:free",
             "messages": conversation,
             "max_tokens": 60,
             "temperature": 0.7,
