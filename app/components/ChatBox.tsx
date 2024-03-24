@@ -32,12 +32,12 @@ export default function ChatBox() {
   return (
     <div className='h-[80%] w-[75%] flex flex-col justify-end mb-8 gap-3'>
         {conversation.map((message, index) => (
-            message.isCoffAI ? 
-            <TypewriterEffect key={index} words={getWords(message.message)} className={CoffAIStyle} />: 
-            <div key={index} className={UserMessageStyle}>{message.message}</div>
+            message.role == 'assistant' ? 
+            <TypewriterEffect key={index} words={getWords(message.content)} className={CoffAIStyle} /> : 
+            (message.role == 'user' ? <div key={index} className={UserMessageStyle}>{message.content}</div> : null)
         ))}
         {/* check if last message is bot if its not add a loading prompt */}
-        {!conversation[conversation.length - 1].isCoffAI && <LoadingPrompt/>}
+        {conversation[conversation.length - 1].role == 'user' && <LoadingPrompt/>}
     </div>
   )
 }

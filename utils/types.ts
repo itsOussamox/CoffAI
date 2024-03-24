@@ -7,9 +7,8 @@ export interface PromptState {
     isStarted: boolean;
 }
 
-interface Conversation {
-    queue?: boolean;
-    isCoffAI: boolean;
-    message: string;
+export interface Conversation {
+    role: string;
+    content: string;
 }
 // add interface for the conversation component

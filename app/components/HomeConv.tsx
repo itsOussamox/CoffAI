@@ -8,23 +8,27 @@ import { store, RootState } from '@/app/states/store';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { addConversation, startConversation } from "../states/promptSlice";
-
+import { PromptSender } from "../api/PromptSender";
+import { getResponse } from "./MainConv";
+import { Conversation } from "@/utils/types";
 export default function HomeConv(){
     const dispatch = useDispatch();
     const [inputPrompt, setInputPrompt] = useState(''); 
-    const {lastPrompt, isStarted} = useSelector((state: RootState) => state.prompt);
+    const {lastPrompt, isStarted, conversation} = useSelector((state: RootState) => state.prompt);
 
     
     const fillPrompt = (e: any) => {
         setInputPrompt(e.target.value);
     }
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) =>  {
         e.preventDefault();
         const promptParsed = inputPrompt.trim();
         if(promptParsed === '') return;
-        dispatch(addConversation({message: inputPrompt, isCoffAI: false}));
-        dispatch(addConversation({message: "Hello, I'am CoffAI.", isCoffAI: true}))
+        const firstPrompt : Conversation = {role: "user", content: inputPrompt};
+        dispatch(addConversation(firstPrompt));
+        PromptSender([conversation[0], firstPrompt])
+            .then((response) => {getResponse(response, dispatch)})
         dispatch(startConversation());
     }
     return (
